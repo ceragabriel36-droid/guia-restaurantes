@@ -1,93 +1,39 @@
-# PRD · <Nombre de tu producto>
-
-> Documento de requisitos del producto (Product Requirements Document).
-> Complétalo en el Sprint 0 (historia H0.3) y pide la aprobación del profesor en un Issue.
-> Cada requisito funcional (RF) se convierte en un Issue con la plantilla "Historia de usuario".
-
-| Campo | Valor |
-| --- | --- |
-| Alumno | |
-| Proyecto n.º | |
-| Sitio de referencia | |
-| Compañero revisor | |
-| URL desplegada | (se completa en el Sprint 5) |
+# PRD — guia-restaurantes
 
 ## 1. Problema
-
-¿Qué problema real resuelve y a quién le duele? (3 a 5 líneas)
+Los usuarios tienen dificultades para centralizar, descubrir y consultar información organizada de restaurantes (como categorías gastronómicas, ubicación, horarios y reseñas) al elegir dónde comer. Además, se requiere una estructura ordenada para mantener el catálogo de locales sin mezclar responsabilidades ni adelantar módulos restringidos de etapas posteriores.
 
 ## 2. Usuarios
+- *Visitante / comensal:* Busca, filtra y consulta restaurantes según categoría gastronómica, ubicación, horarios y reseñas.
+- *Administrador / gestor de catálogo:* Organiza y actualiza la información del catálogo de restaurantes y sus categorías.
 
-- **Usuario principal:** quién es, qué necesita, desde qué dispositivo entra.
-- **Usuario secundario:**
+## 3. Alcance
+### Incluido en el alcance inicial
+- Definición del producto y requisitos base del proyecto (AGENTS.md y docs/PRD.md).
+- Consulta, búsqueda y filtrado de restaurantes por categoría gastronómica, ubicación y horarios.
+- Visualización de la información detallada del restaurante y sus reseñas.
+- Organización del catálogo de locales en la aplicación.
 
-## 3. Objetivo y métrica de éxito
+### Fuera del alcance inicial
+- Escribir o adelantar el código de src/shared/structures/ ni de src/shared/algorithms/ (correspondientes a las épicas E3 y E4).
+- Funcionalidades avanzadas fuera del alcance inicial del Sprint 0.
 
-Ejemplo: «Un bodeguero registra una venta en menos de 10 segundos».
+## 4. Requisitos
+### Requisitos funcionales
+- *RF-01:* Consultar y listar restaurantes con su información principal.
+- *RF-02:* Buscar y filtrar restaurantes por categoría gastronómica, ubicación y horarios.
+- *RF-03:* Ver el detalle de un restaurante y consultar sus reseñas.
+- *RF-04:* Gestionar y actualizar datos de restaurantes en el catálogo.
 
-## 4. Alcance del MVP
+### Requisitos no funcionales
+- *RNF-01:* Interfaz web clara y sencilla para descubrir y consultar locales.
+- *RNF-02:* Organización modular del código y documentación clara y mantenible.
+- *RNF-03:* Comprobaciones automáticas (CI) en verde y ejecución estable de la aplicación.
 
-Entre 5 y 8 funcionalidades que SÍ entran este semestre.
-
-1.
-2.
-3.
-
-### Funcionalidades → carpetas de `src/` (screaming architecture)
-
-Cada funcionalidad del alcance será una carpeta en `src/`. Nómbralas en inglés y en plural.
-
-| Funcionalidad | Carpeta |
-| --- | --- |
-| Ejemplo: ventas | `src/sales` |
-| | |
-
-## 5. Fuera de alcance
-
-Lo que NO vas a construir.
-
--
-
-## 6. Requisitos funcionales
-
-| ID | Requisito | Prioridad (alta, media, baja) |
-| --- | --- | --- |
-| RF-01 | | |
-| RF-02 | | |
-
-## 7. Requisitos no funcionales
-
-- Responsive, móvil primero (375 px y 1280 px).
-- Lighthouse ≥ 90 en Accesibilidad y Buenas prácticas.
-- 0 errores en la consola del navegador.
-- Funciona con 10.000 registros sin congelarse.
-
-## 8. Modelo de datos
-
-Diagrama entidad-relación y tablas PostgreSQL con tipos, claves y restricciones.
-GitHub dibuja diagramas Mermaid; edita este ejemplo:
-
-```mermaid
-erDiagram
-  CLIENTE ||--o{ PEDIDO : hace
-  PEDIDO ||--|{ LINEA_PEDIDO : contiene
-  PRODUCTO ||--o{ LINEA_PEDIDO : aparece_en
-  CLIENTE {
-    int id PK
-    text nombre
-    text telefono
-  }
-  PEDIDO {
-    int id PK
-    int cliente_id FK
-    timestamptz creado_en
-  }
-```
-
-## 9. Reto técnico distintivo
-
-El que te tocó en el catálogo y cómo piensas resolverlo.
-
-## 10. Riesgos y preguntas abiertas
-
--
+## 5. Funcionalidades y carpeta en src/
+- *Catálogo y consulta de restaurantes:* src/modules/restaurants/
+- *Búsqueda y filtros (categoría, ubicación, horarios):* src/modules/search/ o src/modules/restaurants/
+- *Reseñas de restaurantes:* src/modules/reviews/
+- *Componentes e interfaz web:* src/components/ o src/pages/ / src/ui/
+- *Utilidades y servicios generales:* src/lib/ o src/services/
+- *Estructuras y algoritmos (épicas E3 y E4 — restringidas en esta etapa):* src/shared/structures/ y src/shared/algorithms/
