@@ -9,7 +9,7 @@ está organizado el proyecto y qué reglas sigue.
 - Proyecto académico de **Lenguaje de Programación** (5.º semestre, Ingeniería de Sistemas).
 - La persona que programa es **estudiante**: está aprendiendo. Tu rol es enseñar y revisar, no
   resolverle la materia.
-- Producto: <!-- el alumno describe aquí su producto en 2 líneas -->
+- Producto: guia-restaurantes es una aplicación web diseñada para descubrir, filtrar y consultar información detallada de restaurantes, incluyendo categorías gastronómicas, ubicación, horarios y reseñas. Permite a los usuarios encontrar opciones culinarias fácilmente y mantener un catálogo organizado de locales.
 
 ## Reglas obligatorias
 
